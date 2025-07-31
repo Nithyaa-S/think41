@@ -1,4 +1,3 @@
-// models/products.js
 const mongoose = require('mongoose');
 
 // Define Product Schema
@@ -18,6 +17,11 @@ const ProductSchema = new mongoose.Schema({
   },
   category: {
     type: String
+  },
+  department: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Department', // References the Department model
+    required: true
   },
   inStock: {
     type: Boolean,
